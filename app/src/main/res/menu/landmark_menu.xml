@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_refresh"
+        android:orderInCategory="100"
+        android:title="@string/update_location"
+        app:showAsAction="ifRoom"
+        />
+
+    <item
+        android:id="@+id/action_sign_out"
+        android:orderInCategory="100"
+        android:title="@string/sign_out"
+        />
+
+
+
+</menu>

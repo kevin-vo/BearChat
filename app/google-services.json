@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1030091369829",
+    "firebase_url": "https://bearchat-a43ce.firebaseio.com",
+    "project_id": "bearchat-a43ce",
+    "storage_bucket": "bearchat-a43ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1030091369829:android:3299009a649670a6",
+        "android_client_info": {
+          "package_name": "com.example.kvo.bearchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1030091369829-rf9v7q0gv4n86l4otuq93n0q4vk86rnk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kvo.bearchat",
+            "certificate_hash": "404c835589ee8af8d9e6f13f8f4eb7bae5f823d3"
+          }
+        },
+        {
+          "client_id": "1030091369829-uitp8h87bfln2cbit1j45ujncs7k3flj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcZ5B-HPCy-lOGHYmEF0oDYzsWrs-b6QE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1030091369829-uitp8h87bfln2cbit1j45ujncs7k3flj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
