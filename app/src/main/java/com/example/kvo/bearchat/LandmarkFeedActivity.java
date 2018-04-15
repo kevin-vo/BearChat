@@ -125,19 +125,14 @@ public class LandmarkFeedActivity extends AppCompatActivity {
 
 
 
-            Log.e("HELLO", "1");
             mFusedLocationClient.getLastLocation()
                     .addOnSuccessListener(this, new OnSuccessListener<Location>() {
                         @Override
                         public void onSuccess(Location location) {
                             // Got last known location. In some rare situations this can be null.
-                            Log.e("HELLO", "2");
                             if (location != null) {
                                 // Logic to handle location object
-                                Log.e("HELLO", "3");
                                 mCurrentLocation = location;
-                                Log.e("sup",location.toString() );
-
 
 
                                 for (Landmark landmark : mLandmarks) {
@@ -218,42 +213,42 @@ public class LandmarkFeedActivity extends AppCompatActivity {
         Landmark q = new Landmark("Class of 1927 Bear",
                 37.869288,
                 -122.260125,
-                0,
+                -1,
                 R.drawable.mlk_bear);
         Landmark w = new Landmark("Stadium Entrance Bear",
                 37.871305,
                 -122.252516,
-                0,
+                -1,
                 R.drawable.outside_stadium);
         Landmark e = new Landmark("Macchi Bears",
                 37.874118,
                 -122.258778,
-                0,
+                -1,
                 R.drawable.macchi_bears);
         Landmark r = new Landmark("Les Bears",
                 37.871707,
                 -122.253602,
-                0,
+                -1,
                 R.drawable.les_bears);
         Landmark t = new Landmark("Strawberry Creek Topiary Bear",
                 37.869861,
                 -122.261148,
-                0,
+                -1,
                 R.drawable.strawberry_creek);
         Landmark y = new Landmark("South Hall Little Bear",
                 37.871382,
                 -122.258355,
-                0,
+                -1,
                 R.drawable.south_hall);
         Landmark u = new Landmark("Great Bear Bell Bears",
                 37.872061599999995,
                 -122.2578123,
-                0,
+                -1,
                 R.drawable.bell_bears);
         Landmark i = new Landmark("Campanile Esplanade Bears",
                 37.87233810000001,
                 -122.25792999999999,
-                0,
+                -1,
                 R.drawable.bench_bears);
         mLandmarks.add(q);
         mLandmarks.add(w);

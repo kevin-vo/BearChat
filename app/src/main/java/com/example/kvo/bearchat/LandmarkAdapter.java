@@ -89,7 +89,6 @@ class LandmarkViewHolder extends RecyclerView.ViewHolder {
         mLandmarkBubbleLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("Landmark: ", mLandmarkTextView.getText().toString());
                 Intent commentFeedIntent = new Intent(mContext, CommentFeedActivity.class);
                 commentFeedIntent.putExtra("usernameString", username);
                 commentFeedIntent.putExtra("landmarkTextString", mLandmarkTextView.getText().toString());
@@ -103,7 +102,9 @@ class LandmarkViewHolder extends RecyclerView.ViewHolder {
         mLandmarkTextView.setText(landmark.getName());
         mLandmarkImage.setImageResource(landmark.getFilename());
         int rounded_distance = (int) Math.round(landmark.getDistance());
-        if (rounded_distance < 10) {
+        if (rounded_distance == -1) {
+            mDistanceText.setText("Need location services!");
+        } else if (rounded_distance < 10) {
             mDistanceText.setText("less than 10 meters away");
         } else {
             mDistanceText.setText(rounded_distance + " meters away");

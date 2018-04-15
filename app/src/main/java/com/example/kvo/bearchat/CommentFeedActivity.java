@@ -58,7 +58,6 @@ public class CommentFeedActivity extends AppCompatActivity {
         // TODO: replace this with the name of the landmark the user chose
         username = (String) getIntent().getExtras().get("usernameString");
         landmarkName = (String) getIntent().getExtras().get("landmarkTextString");
-        Log.e(username, "YOOOOOO" );
 
         // sets the app bar's title
         setTitle(landmarkName + ": Posts");
@@ -97,32 +96,12 @@ public class CommentFeedActivity extends AppCompatActivity {
         ValueEventListener myDataListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-//                HashMap<String, Object> comments = (HashMap<String, Object>) dataSnapshot.getValue();
-//                mComments = new ArrayList<Comment>();
-//                for (String c : comments.keySet()) {
-//                    HashMap<String, String> dat = (HashMap<String, String>) comments.get(c);
-//                    String username = dat.get("username");
-//                    String text = dat.get("text");
-//
-//                    SimpleDateFormat f = new SimpleDateFormat("E MMM dd HH:mm:ss z y");
-//                    Date date = null;
-//                    try {
-//                        date = f.parse(c);
-//                    } catch (ParseException e) {
-//                        e.printStackTrace();
-//                    }
-//                    mComments.add(new Comment(text, username, date));
-//                }
-//                setAdapterAndUpdateData();
 
                 mComments = new ArrayList<Comment>();
                 for (DataSnapshot child : dataSnapshot.getChildren()) {
-                    Log.e("HALLO", child.getKey().toString());
-                    Log.e("HALLO", child.getValue().toString());
 
                     String d = child.getKey();
                     HashMap<String, String> dat = (HashMap<String, String>) child.getValue();
-//                    HashMap<String, String> dat = (HashMap<String, String>) child.get;
                     String username = dat.get("username");
                     String text = dat.get("text");
 

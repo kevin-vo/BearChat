@@ -71,12 +71,10 @@ public class SignUpActivity extends AppCompatActivity {
                         String password = mPasswordField.getText().toString();
                         final String username = mUsernameField.getText().toString();
                         if (dataSnapshot.exists()) {
-                            Log.e("USERNAME", "EXIISSTTSSS");
                             mUsernameField.setError("Username already exists.");
 
 
                         } else {
-                            Log.e("USERNAME", "dono exists");
                             mAuth.createUserWithEmailAndPassword(email, password)
                                     .addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
                                         @Override
@@ -155,4 +153,5 @@ public class SignUpActivity extends AppCompatActivity {
 
         return valid;
     }
+
 }

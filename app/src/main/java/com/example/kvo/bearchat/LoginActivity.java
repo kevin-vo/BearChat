@@ -57,15 +57,12 @@ public class LoginActivity extends AppCompatActivity {
         final FirebaseUser currentUser = mAuth.getCurrentUser();
 
         if (currentUser == null) {
-            Log.e("loginactivity", "nouser" );
         } else {
-            Log.e("loginactivity", "USERRRR");
             mDatabase.child("User_Lookup").addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     String uid = currentUser.getUid();
                     String username = dataSnapshot.child(uid).getValue().toString();
-                    Log.e("LOGGING IN", username);
                     Intent landmarkFeedIntent = new Intent(LoginActivity.this,
                             LandmarkFeedActivity.class);
                     landmarkFeedIntent.putExtra("usernameString", username);
@@ -95,14 +92,6 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                String username = usernameText.getText().toString();
-//                if (username.length() > 0) {
-//                    Intent landmarkFeedIntent = new Intent(LoginActivity.this,
-//                            LandmarkFeedActivity.class);
-//                    landmarkFeedIntent.putExtra("usernameString", username);
-//
-//                    LoginActivity.this.startActivity(landmarkFeedIntent);
-//                }
                 if (!validateForm()) {
                     return;
                 }
@@ -114,7 +103,6 @@ public class LoginActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     // Sign in success, update UI with the signed-in user's information
-                                    Log.d("nice.", "signInWithEmail:success");
                                     FirebaseUser user = mAuth.getCurrentUser();
 
 
@@ -123,7 +111,6 @@ public class LoginActivity extends AppCompatActivity {
                                         @Override
                                         public void onDataChange(DataSnapshot dataSnapshot) {
                                             String username = dataSnapshot.child(uid).getValue().toString();
-                                            Log.e("LOGGING IN", username);
                                             Intent landmarkFeedIntent = new Intent(LoginActivity.this,
                                                     LandmarkFeedActivity.class);
                                             landmarkFeedIntent.putExtra("usernameString", username);
@@ -182,4 +169,6 @@ public class LoginActivity extends AppCompatActivity {
 
         return valid;
     }
+
+
 }
