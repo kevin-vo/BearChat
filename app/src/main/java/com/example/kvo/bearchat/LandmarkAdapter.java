@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -89,10 +90,15 @@ class LandmarkViewHolder extends RecyclerView.ViewHolder {
         mLandmarkBubbleLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent commentFeedIntent = new Intent(mContext, CommentFeedActivity.class);
-                commentFeedIntent.putExtra("usernameString", username);
-                commentFeedIntent.putExtra("landmarkTextString", mLandmarkTextView.getText().toString());
-                mContext.startActivity(commentFeedIntent);
+                if (mDistanceText.getText().toString().equals("less than 10 meters away")) {
+                    Intent commentFeedIntent = new Intent(mContext, CommentFeedActivity.class);
+                    commentFeedIntent.putExtra("usernameString", username);
+                    commentFeedIntent.putExtra("landmarkTextString", mLandmarkTextView.getText().toString());
+                    mContext.startActivity(commentFeedIntent);
+                } else {
+                    Toast.makeText(mContext, "Too far from location!",
+                            Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

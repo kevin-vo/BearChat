@@ -145,6 +145,7 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+
     private boolean validateForm() {
         boolean valid = true;
 
